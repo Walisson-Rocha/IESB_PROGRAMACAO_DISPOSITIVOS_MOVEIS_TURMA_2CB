@@ -12,6 +12,7 @@
   "description": "",
   "type": "module",
   "dependencies": {
+    "04---introducao-react-native-npm": "file:",
     "moment": "^2.30.1"
   }
 }

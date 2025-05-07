@@ -1,53 +1,30 @@
 import React from 'react'
-import { FlatList, StyleSheet, Text, View } from 'react-native'
-import { Button, Card } from 'react-native-paper'
+import { FlatList, StyleSheet, View } from 'react-native'
+import { Title } from 'react-native-paper'
+import CarCard from '../components/CarCard'
 
-export default function ListaScreen({ navigation, route }) {
-
+export default function ListaScreen({ navigation }) {
   const carros = [
-    {
-      nome: "Gol",
-      ano: "2012",
-      cor: "Azul",
-      fabricante: "Wolkswagen"
-    },
-    {
-      nome: "Civic",
-      ano: "2018",
-      cor: "Preto",
-      fabricante: "Honda"
-    },
-    {
-      nome: "Uno",
-      ano: "2020",
-      cor: "Branco",
-      fabricante: "Fiat"
-    },
+    { nome: 'Gol', ano: '2012', cor: 'Azul', fabricante: 'Volkswagen' },
+    { nome: 'Civic', ano: '2018', cor: 'Preto', fabricante: 'Honda' },
+    { nome: 'Uno', ano: '2020', cor: 'Branco', fabricante: 'Fiat' },
   ]
 
   return (
-    <View>
+    <View style={styles.container}>
+      <Title style={styles.title}>Carros Disponíveis</Title>
       <FlatList
         data={carros}
+        keyExtractor={(item, index) => `${item.nome}-${index}`}
         renderItem={({ item }) => (
-          <Card style={{ margin: 10 }}>
-            <Card.Content>
-              <Text>Carro: {item.nome}</Text>
-            </Card.Content>
-            <Card.Actions>
-              <Button
-                mode='contained'
-                icon='arrow-right'
-                onPress={() => navigation.navigate('ItemScreen', { item })}
-              >
-                Ver detalhes
-              </Button>
-            </Card.Actions>
-          </Card>
+          <CarCard carro={item} onPress={() => navigation.navigate('ItemScreen', { item })} />
         )}
       />
     </View>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#f5f5f5' },
+  title: { margin: 16, textAlign: 'center', fontSize: 20 },
+})
