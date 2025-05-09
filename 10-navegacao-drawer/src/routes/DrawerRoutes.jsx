@@ -19,8 +19,6 @@ export default function DrawerRoutes() {
         title: 'Inicio',
        }}
        />
-
-
       <DrawerNav.Screen name="Profile" component={ProfileScreen} />
       <DrawerNav.Screen name="Config" component={ConfigScreen} />
     </DrawerNav.Navigator>
