@@ -4,7 +4,7 @@ import { Card, Text, Title, Divider } from 'react-native-paper';
 import { team } from '../data/teamData';
 
 export default function EscudoScreen() {
-  // Criando uma cópia do objeto team para evitar modificações diretas
+ 
   const escudoData = { ...team };
 
   return (

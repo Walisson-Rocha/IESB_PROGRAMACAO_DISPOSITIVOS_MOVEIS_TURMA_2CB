@@ -4,7 +4,7 @@ export const customTheme = {
   ...MD3LightTheme,
   colors: {
     ...MD3LightTheme.colors,
-    primary: '#d32f2f', // vermelho Flamengo
+    primary: '#d32f2f', 
     secondary: '#000000',
     background: '#f5f5f5',
     surface: '#ffffff',
